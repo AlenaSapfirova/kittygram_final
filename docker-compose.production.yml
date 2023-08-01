@@ -21,7 +21,7 @@ services:
   frontend:
     image: alenasap/kittygram_frontend
     env_file: .env
-    command: cp -r /app/build/. /frontend_static/
+    command: cp -r /app/build/. /static/
     volumes:
       - static:/static
   gateway:
