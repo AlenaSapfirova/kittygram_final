@@ -15,8 +15,11 @@ services:
   backend:
     image: alenasap/kittygram_backend
     env_file: .env
+    depends_on:
+      - db
     volumes:
       - static:/backend_static
+      - media:/media
 
   frontend:
     image: alenasap/kittygram_frontend
