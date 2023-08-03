@@ -3,14 +3,19 @@
 Инструкция по установке:
 1. Скачать проект с репозиитория
 2. Зайти на удаленный сервер, используя ключи
-3. Перейти в директорию kittygram/ и запустить docker-compose.production.yml, используя команду:
-~~~ sudo docker compose -f docker-compose.production.yml up -d ~~~
-4. Выполнить миграции:
-~~~ sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate ~~~
-5. Пересобрать статику:
-~~~ sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic ~~~
-6. Копиоуем статику в папку static_backend/static/:
-~~~ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/ ~~~
+3. Склонировать репозиторий на серверЖ
+ - git clone git clone git@github.com:Ваш_аккаунт/kittygram_final.git 
+4. Задать переменные:
+ - POSTEGRE_USER (логин)
+ - POSTRGRE_PASSWORD(пароль) 
+4. Перейти в директорию kittygram/ и запустить docker-compose.production.yml, используя команду:
+~~~ sudo docker compose -f docker-compose.production.yml up   -d ~~~
+5. Выполнить миграции:
+   ~~~ sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate ~~~
+6. Пересобрать статику:
+   ~~~ sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic ~~~
+7. Копиоуем статику в папку static_backend/static/:
+   ~~~ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/ ~~~
 
 
 Информация по использованию:
